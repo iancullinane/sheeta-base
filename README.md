@@ -3,6 +3,8 @@ sheeta-base
 
 A base app to deploy stacks and constructs into the "sheeta" account.
 
+This is meant to be able to "compose" the entire application stack from constructs.
+
 
 ## Useful commands
 
