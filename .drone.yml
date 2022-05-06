@@ -8,3 +8,4 @@ steps:
     commands:
     - cdk --output template synth
     - ls -la template
+    - echo "done"
