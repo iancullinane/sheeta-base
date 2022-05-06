@@ -15,3 +15,15 @@ steps:
     - cdk --output template synth
     - ls -la template
     - echo "done"
+
+  - name: upload-cdk-out
+    image: plugins/s3
+    settings:
+      bucket: sheeta-cfn-bucket
+      region: us-east-2
+      access_key:
+        from_secret: sheeta_aws_key
+      secret_key:
+        from_secret: sheeta_aws_secret
+      source: template/**/*
+      target: /${DRONE_REPO}/${DRONE_REPO_BRANCH}${DRONE_COMMIT_SHA}/
