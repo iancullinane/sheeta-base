@@ -1,8 +1,8 @@
-# Welcome to your CDK TypeScript project
+sheeta-base
+===========
 
-This is a blank project for CDK development with TypeScript.
+A base app to deploy stacks and constructs into the "sheeta" account.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
