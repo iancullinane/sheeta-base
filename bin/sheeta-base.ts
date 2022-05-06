@@ -7,15 +7,26 @@ import { SheetaBaseStack } from '../lib/sheeta-base-stack';
 import { ApplicationConfig } from '../lib/sheeta-base-stack';
 
 
-var lclCfg = JSON.parse(fs.readFileSync('config/local.json', 'utf-8')) as ApplicationConfig;
+// var lclCfg = JSON.parse(fs.readFileSync('config/local.json', 'utf-8')) as ApplicationConfig;
+// For demo purposes only
+var lclCfg = {
+  project: {
+    name: "sheeta",
+    account: "208744038881",
+    region: "us-east-2",
+    env: "dev"
+  },
+  cfn: {
+    bucketName: "sheeta-cfn-bucket"
+  },
+  config: {
+    bucketName: "sheeta-config-bucket"
+  }
+}
 
 const envSheeta = { region: lclCfg.project.region, account: lclCfg.project.account };
 const app = new App();
 new SheetaBaseStack(app, 'SheetaBaseStack', {
-
-  // var projectConfig = JSON.parse(fs.readFileSync('config/base.json', 'utf-8')) as ConfigProps;
-  // var lclCfg = JSON.parse(fs.readFileSync('config/local.json', 'utf-8')) as LocalConfig;
-
   env: envSheeta,
   ...lclCfg
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
