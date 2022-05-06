@@ -6,6 +6,7 @@ steps:
   - name: aws-cdk
     image: eignhpants/docker-aws-cdk
     commands:
+    - npm install
     - cdk --output template synth
     - ls -la template
     - echo "done"
